@@ -10,7 +10,13 @@ module.exports = {
         }).then(
                 values => {
                     console.log(values)
-                    variables.update({value: parseFloat(values[0].value) + 0.0003},{key:'pozo_acumulado'})
+                    variables.update(
+                        {
+                            value: parseFloat(values[0].value) + 0.0003
+                        },
+                        {
+                            where:{key:'pozo_acumulado'}
+                        })
                 }
         )
 

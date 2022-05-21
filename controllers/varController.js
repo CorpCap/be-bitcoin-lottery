@@ -23,8 +23,8 @@ module.exports = {
             varis => {
                 const height = Number(varis[0].value) + 6;
                 axios.get('https://mempool.space/api/block-height/'+height).then(
-                    result => {
-                        variables.update({value: height},{key:'last_block'}).then(
+                    () => {
+                        variables.update({value: height},{where: {key:'last_block'}}).then(
                             () => res.status(200).send("update")
                         )
                     }
