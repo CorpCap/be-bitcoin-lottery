@@ -7,13 +7,14 @@ module.exports = {
             {attributes:['key','value']}
         )
             .then(
-                variables => res.status(201).send(variables)
+                variables => res.status(200).send(variables)
             )
             .catch(
                 error => res.status(400).send(error)
             )
     },
     update(req, res){
+        res.status(200).send("update")
         variables.findAll({
             where: {
                 key: 'last_block'
